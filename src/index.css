@@ -1,0 +1,34 @@
+html {
+  height: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+body {  
+  background-color: #f4f6f8;
+  height: 100%;
+  background: url('/dark-material-bg.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#root {
+  height: 100%;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+::-webkit-scrollbar{
+  width: 12px;
+  height: 12px;
+  background-color: rgba(0,0,0,0);
+}
+::-webkit-scrollbar-thumb{
+  border: 2px solid transparent;
+  box-shadow: inset 0 0 0 12px rgba(0,0,0,.37);
+  border-radius: 12px;
+}

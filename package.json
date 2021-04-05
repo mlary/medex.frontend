@@ -1,0 +1,81 @@
+{
+  "name": "medex-marketer",
+  "version": "1.0.0e",
+  "private": true,
+  "dependencies": {
+    "@date-io/date-fns": "^1.3.9",
+    "@devexpress/dx-core": "^2.7.0",
+    "@devexpress/dx-react-core": "^2.7.0",
+    "@devexpress/dx-react-grid": "^2.7.0",
+    "@devexpress/dx-react-grid-material-ui": "^2.7.0",
+    "@material-ui/core": "^4.8.3",
+    "@material-ui/icons": "^4.5.1",
+    "@material-ui/lab": "^4.0.0-alpha.39",
+    "@material-ui/pickers": "^3.2.8",
+    "@types/file-saver": "^2.0.1",
+    "@types/history": "^4.7.5",
+    "@types/lodash": "^4.14.168",
+    "@types/node": "^12.0.0",
+    "@types/react": "^16.9.0",
+    "@types/react-dom": "^16.9.0",
+    "@types/react-input-mask": "^2.0.5",
+    "@types/react-loadable": "^5.5.3",
+    "@types/react-router": "^5.1.7",
+    "@types/react-router-dom": "^5.1.5",
+    "@types/react-window": "^1.8.2",
+    "@types/uuid": "^8.3.0",
+    "axios": "^0.19.2",
+    "axios-mock-adapter": "^1.18.2",
+    "clsx": "^1.1.0",
+    "date-fns": "^2.0.0-beta.5",
+    "effector": "^21.0.3",
+    "effector-localstorage": "^0.5.3",
+    "effector-react": "^21.0.4",
+    "history": "^4.10.1",
+    "i18next": "^19.6.3",
+    "lodash.uniq": "^4.5.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-hook-form": "^6.3.1",
+    "react-i18next": "^11.5.1",
+    "react-input-mask": "^2.0.4",
+    "react-loadable": "^5.5.0",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "3.4.3",
+    "react-window": "^1.8.6",
+    "typescript": "~3.7.2",
+    "uuid": "^8.3.1",
+    "xlsx": "^0.16.9"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "2.24.0",
+    "cross-env": "^7.0.2",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-typescript": "^7.2.1",
+    "eslint-plugin-import": "2.20.1",
+    "eslint-plugin-jsx-a11y": "6.2.3",
+    "eslint-plugin-react": "7.19.0",
+    "eslint-plugin-react-hooks": "2.5.0"
+  },
+  "scripts": {
+    "start": "cross-env PORT=5050 REACT_APP_BUILD=dev react-scripts start --open",
+    "start-stage": "cross-env PORT=5050 REACT_APP_BUILD=stage react-scripts start --open",
+    "build": "cross-env PORT=5050 REACT_APP_BUILD=stage react-scripts build",
+    "lint": "eslint --ext src/**/*.ts **/*.d.ts src/**/*.tsx"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
