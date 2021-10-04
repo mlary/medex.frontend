@@ -96,7 +96,7 @@ const Authorization = () => {
         history.push('/');
       }
     });
-  }, []);
+  }, [history]);
 
   const handleClickShowPassword = () => {
     setShowPassword(!showPassword);

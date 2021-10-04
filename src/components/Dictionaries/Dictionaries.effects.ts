@@ -1,12 +1,17 @@
 import { Distributor } from './../../services/DistributorService/models/Distributor';
 import { GroupName } from './../../services/GroupNameService/models/GroupName';
 import { Manufacturer } from './../../services/ManufacturerService/models/Manufacturer';
+import { PharmGroup } from './../../services/PharmGroupService/models/PharmGroup';
 import { InterName } from './../../services/InterNameService/models/InterName';
+import { AtcClassCode } from './../../services/AtcClassCodeService/models/AtcClassCode';
 import InterNameService from './../../services/InterNameService';
 import GroupNameService from './../../services/GroupNameService';
 import ManufacturerService from './../../services/ManufacturerService';
 import DistributorService from './../../services/DistributorService';
 import ProductService from './../../services/ProductService';
+import PharmGroupService from './../../services/PharmGroupService';
+import AtcClassCodeService from './../../services/AtcClassCodeService';
+
 
 import { createEffect, createStore } from 'effector';
 
@@ -17,6 +22,8 @@ export interface DictionariesProps {
   distributors: Distributor[];
   productNames: string[];
   countries: string[];
+  pharmGroups: PharmGroup[];
+  atcClassCodes: AtcClassCode[];
 }
 
 const initState: DictionariesProps = {
@@ -26,6 +33,8 @@ const initState: DictionariesProps = {
   manufacturers: [],
   productNames: [],
   countries: [],
+  pharmGroups: [],
+  atcClassCodes: [],
 };
 
 export const fetchDictionaries = () => {
@@ -35,6 +44,8 @@ export const fetchDictionaries = () => {
   fetchGroupNames();
   fetchInterNames();
   fetchProductNames();
+  fetchPharmGroups();
+  fetchAtcClassCodes();
 };
 export const fetchInterNames = createEffect({
   handler: async (): Promise<InterName[]> => {
@@ -89,6 +100,28 @@ export const fetchGroupNames = createEffect({
   },
 });
 
+export const fetchPharmGroups = createEffect({
+  handler: async (): Promise<PharmGroup[]> => {
+    try {
+      const result = await PharmGroupService.fetch();
+      return result;
+    } catch {
+      return [];
+    }
+  },
+});
+
+export const fetchAtcClassCodes = createEffect({
+  handler: async (): Promise<PharmGroup[]> => {
+    try {
+      const result = await AtcClassCodeService.fetch();
+      return result;
+    } catch {
+      return [];
+    }
+  },
+});
+
 export const fetchProductNames = createEffect({
   handler: async (): Promise<string[]> => {
     try {
@@ -111,6 +144,12 @@ $dictionaries
   })
   .on(fetchProductNames.done, (state, payload) => {
     return { ...state, productNames: payload.result };
+  })
+  .on(fetchAtcClassCodes.done, (state, payload) => {
+    return { ...state, atcClassCodes: payload.result };
+  })
+  .on(fetchPharmGroups.done, (state, payload) => {
+    return { ...state, pharmGroups: payload.result };
   })
   .on(fetchInterNames.done, (state, payload) => {
     return { ...state, interNames: payload.result };

@@ -6,7 +6,7 @@ import DeleteOutlineIcon from '@material-ui/icons/DeleteOutline';
 import EditOutlinedIcon from '@material-ui/icons/EditOutlined';
 type ActionFormatterProps<T> = KnownValueFormatterProps<T> & ActionTypeProviderProps<T>;
 const ActionFotmatter = <T extends unknown>(props: ActionFormatterProps<T>) => {
-  const { value, onEdit, onDelete, row } = props;
+  const { onEdit, onDelete, row } = props;
   return (
     <>
       {onEdit && row && (
